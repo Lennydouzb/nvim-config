@@ -6,7 +6,7 @@
 --   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        --
 --                                                +#+#+#+#+#+   +#+           --
 --   Created: 2024/04/16 16:29:45 by babonnet          #+#    #+#             --
---   Updated: 2025/11/26 17:04:27 by ldesboui         ###   ########.fr       --
+--   Updated: 2025/12/10 13:37:42 by ldesboui         ###   ########.fr       --
 --                                                                            --
 -- ************************************************************************** --
 
@@ -47,4 +47,12 @@ vim.api.nvim_create_autocmd("QuitPre", {
     end
   end
 })
+vim.keymap.set('n', '<S-h>', ':BufferLineCyclePrev<CR>', { desc = "Onglet précédent" })
+vim.keymap.set('n', '<S-l>', ':BufferLineCycleNext<CR>', { desc = "Onglet suivant" })
 
+-- Déplacer les onglets eux-mêmes avec < et >
+vim.keymap.set('n', '<S-Left>', ':BufferLineMovePrev<CR>', { desc = "Bouger onglet à gauche" })
+vim.keymap.set('n', '<S-Right>', ':BufferLineMoveNext<CR>', { desc = "Bouger onglet à droite" })
+
+-- Fermer l'onglet actuel (mieux que :q qui peut fermer la fenêtre)
+vim.keymap.set('n', '<leader>x', ':bdelete<CR>', { desc = "Fermer buffer" })

@@ -7,7 +7,7 @@ return {
         -- 1. Configuration Norminette
         local norminette = {
             method = null_ls.methods.DIAGNOSTICS,
-            filetypes = { "c", "h" },
+            filetypes = { "c", "cpp" },
             generator = null_ls.generator({
                 command = "norminette",
                 args = { "$FILENAME" },

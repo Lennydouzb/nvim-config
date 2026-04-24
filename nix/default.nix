@@ -8,6 +8,8 @@ let
     clang-tools
     ripgrep
     lua-language-server
+	gcc
+	tree-sitter
   ];
 in
 pkgs.wrapNeovim pkgs.neovim-unwrapped {
